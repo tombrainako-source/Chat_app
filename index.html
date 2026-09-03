@@ -1,0 +1,3175 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+ 
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+ 
+    <title>Ruth Asong | Official Website</title>
+ 
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+ 
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+ 
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+ 
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+ 
+    <style>
+ 
+        /* =========================================================
+           ROOT
+        ========================================================== */
+ 
+        :root {
+ 
+            --black: #080808;
+            --dark: #111111;
+            --white: #ffffff;
+            --cream: #f5f2ec;
+            --gold: #c6a15b;
+            --gold-light: #e6cf9a;
+            --text: #555;
+ 
+        }
+ 
+ 
+        /* =========================================================
+           RESET
+        ========================================================== */
+ 
+        * {
+ 
+            margin: 0;
+            padding: 0;
+ 
+            box-sizing: border-box;
+ 
+        }
+ 
+ 
+        html {
+ 
+            scroll-behavior: smooth;
+ 
+        }
+ 
+ 
+        body {
+ 
+            font-family: "Montserrat", Arial, sans-serif;
+ 
+            background: white;
+ 
+            color: #111;
+ 
+            overflow-x: hidden;
+ 
+        }
+ 
+ 
+        a {
+ 
+            text-decoration: none;
+ 
+            color: inherit;
+ 
+        }
+ 
+ 
+        img {
+ 
+            display: block;
+ 
+            width: 100%;
+ 
+        }
+ 
+ 
+        /* =========================================================
+           SHARED TEXT ANIMATIONS
+        ========================================================== */
+ 
+        @keyframes fadeUp {
+ 
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+ 
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+ 
+        }
+ 
+        @keyframes fadeIn {
+ 
+            from { opacity: 0; }
+            to { opacity: 1; }
+ 
+        }
+ 
+        @keyframes shimmer {
+ 
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+ 
+        }
+ 
+        @keyframes underlineGrow {
+ 
+            from { transform: scaleX(0); }
+            to { transform: scaleX(1); }
+ 
+        }
+ 
+        @keyframes floatSlow {
+ 
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+ 
+        }
+ 
+        /* gradient shimmer text — used on major headings */
+        .shimmer-text {
+ 
+            background: linear-gradient(
+                100deg,
+                #fff 20%,
+                var(--gold-light) 40%,
+                var(--gold) 50%,
+                var(--gold-light) 60%,
+                #fff 80%
+            );
+ 
+            background-size: 250% auto;
+ 
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+ 
+            animation: shimmer 6s linear infinite;
+ 
+        }
+ 
+        /* word-by-word rise animation */
+        .word-rise {
+ 
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(30px);
+ 
+            animation: fadeUp .9s cubic-bezier(.22,1,.36,1) forwards;
+ 
+        }
+ 
+        /* underline reveal beneath section labels */
+        .section-label {
+ 
+            position: relative;
+ 
+            font-size: 9px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 25px;
+ 
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+ 
+        }
+ 
+        .section-label::before {
+ 
+            content: "";
+ 
+            width: 0;
+            height: 1px;
+ 
+            background: var(--gold);
+ 
+            transition: width 1s ease .2s;
+ 
+        }
+ 
+        .reveal.active .section-label::before {
+ 
+            width: 30px;
+ 
+        }
+ 
+        /* =========================================================
+           HEADER / NAVIGATION
+        ========================================================== */
+ 
+        header {
+ 
+            position: fixed;
+ 
+            top: 0;
+            left: 0;
+ 
+            width: 100%;
+ 
+            z-index: 9999;
+ 
+            padding: 25px 7%;
+ 
+            transition:
+ 
+                background .4s ease,
+ 
+                padding .4s ease,
+ 
+                box-shadow .4s ease;
+ 
+        }
+ 
+ 
+        header.scrolled {
+ 
+            background: rgba(8, 8, 8, .96);
+ 
+            padding: 17px 7%;
+ 
+            box-shadow:
+ 
+                0 10px 30px rgba(0,0,0,.2);
+ 
+        }
+ 
+ 
+        nav {
+ 
+            max-width: 1400px;
+ 
+            margin: auto;
+ 
+            display: flex;
+ 
+            align-items: center;
+ 
+            justify-content: space-between;
+ 
+        }
+ 
+ 
+        /* LOGO */
+ 
+        .logo {
+ 
+            color: white;
+ 
+            display: flex;
+ 
+            flex-direction: column;
+ 
+            line-height: 1;
+ 
+        }
+ 
+ 
+        .logo strong {
+ 
+            font-family: "Cormorant Garamond", serif;
+ 
+            font-size: 30px;
+ 
+            font-weight: 600;
+ 
+            letter-spacing: 2px;
+ 
+        }
+ 
+ 
+        .logo span {
+ 
+            font-size: 8px;
+ 
+            letter-spacing: 4px;
+ 
+            margin-top: 7px;
+ 
+            opacity: .75;
+ 
+        }
+ 
+ 
+        /* NAV LINKS */
+ 
+        .nav-links {
+ 
+            list-style: none;
+ 
+            display: flex;
+ 
+            gap: 35px;
+ 
+            align-items: center;
+ 
+        }
+ 
+ 
+        .nav-links a {
+ 
+            position: relative;
+ 
+            color: white;
+ 
+            font-size: 10px;
+ 
+            letter-spacing: 2px;
+ 
+            text-transform: uppercase;
+ 
+            transition: color .3s ease;
+ 
+        }
+ 
+        .nav-links a::after {
+ 
+            content: "";
+ 
+            position: absolute;
+ 
+            left: 0;
+            bottom: -6px;
+ 
+            width: 100%;
+            height: 1px;
+ 
+            background: var(--gold);
+ 
+            transform: scaleX(0);
+            transform-origin: right;
+ 
+            transition: transform .35s ease;
+ 
+        }
+ 
+        .nav-links a:hover::after {
+ 
+            transform: scaleX(1);
+            transform-origin: left;
+ 
+        }
+ 
+ 
+        .nav-links a:hover {
+ 
+            color: var(--gold);
+ 
+        }
+ 
+ 
+        /* BOOK BUTTON */
+ 
+        .book-button {
+ 
+            border: 1px solid rgba(255,255,255,.8);
+ 
+            color: white;
+ 
+            padding: 12px 22px;
+ 
+            font-size: 9px;
+ 
+            letter-spacing: 2px;
+ 
+            text-transform: uppercase;
+ 
+            transition: all .4s ease;
+ 
+        }
+ 
+ 
+        .book-button:hover {
+ 
+            background: white;
+ 
+            color: black;
+ 
+        }
+ 
+ 
+        /* MOBILE MENU BUTTON */
+ 
+        .menu-toggle {
+ 
+            display: none;
+ 
+            color: white;
+ 
+            font-size: 24px;
+ 
+            cursor: pointer;
+ 
+        }
+ 
+ 
+        /* =========================================================
+           HERO  (now a looping video background)
+        ========================================================== */
+ 
+        .hero {
+ 
+            min-height: 100vh;
+ 
+            position: relative;
+ 
+            display: flex;
+ 
+            align-items: center;
+ 
+            justify-content: center;
+ 
+            overflow: hidden;
+ 
+            background: black;
+ 
+        }
+ 
+ 
+        /* HERO VIDEO BACKGROUND */
+ 
+        .hero-video {
+ 
+            position: absolute;
+ 
+            inset: 0;
+ 
+            width: 100%;
+ 
+            height: 100%;
+ 
+            object-fit: cover;
+ 
+            transform: scale(1.02);
+ 
+            animation: heroZoom 14s ease-in-out infinite alternate;
+ 
+        }
+ 
+ 
+        @keyframes heroZoom {
+ 
+            from { transform: scale(1.02); }
+ 
+            to { transform: scale(1.1); }
+ 
+        }
+ 
+ 
+        /* DARK OVERLAY */
+ 
+        .hero::after {
+ 
+            content: "";
+ 
+            position: absolute;
+ 
+            inset: 0;
+ 
+            background:
+ 
+                linear-gradient(
+ 
+                    to bottom,
+ 
+                    rgba(0,0,0,.4),
+ 
+                    rgba(0,0,0,.25) 40%,
+ 
+                    rgba(0,0,0,.8)
+ 
+                );
+ 
+            z-index: 1;
+ 
+        }
+ 
+ 
+        /* HERO CONTENT */
+ 
+        .hero-content {
+ 
+            position: relative;
+ 
+            z-index: 2;
+ 
+            text-align: center;
+ 
+            color: white;
+ 
+            padding: 20px;
+ 
+            max-width: 1000px;
+ 
+        }
+ 
+ 
+        .hero-content small {
+ 
+            display: block;
+ 
+            font-size: 10px;
+ 
+            letter-spacing: 6px;
+ 
+            text-transform: uppercase;
+ 
+            margin-bottom: 25px;
+ 
+            opacity: 0;
+ 
+            animation: fadeUp 1s ease .1s forwards;
+ 
+        }
+ 
+ 
+        .hero-content h1 {
+ 
+            font-family: "Cormorant Garamond", serif;
+ 
+            font-size:
+ 
+                clamp(70px, 11vw, 160px);
+ 
+            font-weight: 500;
+ 
+            line-height: .9;
+ 
+            letter-spacing: 3px;
+ 
+        }
+ 
+ 
+        .hero-content h1 .word-rise:nth-child(1) { animation-delay: .25s; }
+        .hero-content h1 .word-rise:nth-child(2) { animation-delay: .45s; }
+ 
+ 
+        .hero-content p {
+ 
+            margin-top: 30px;
+ 
+            font-size: 11px;
+ 
+            letter-spacing: 3px;
+ 
+            text-transform: uppercase;
+ 
+            opacity: 0;
+ 
+            animation: fadeUp 1s ease .7s forwards;
+ 
+        }
+ 
+ 
+        .hero-actions {
+ 
+            margin-top: 40px;
+ 
+            display: flex;
+ 
+            justify-content: center;
+ 
+            gap: 15px;
+ 
+            flex-wrap: wrap;
+ 
+            opacity: 0;
+ 
+            animation: fadeUp 1s ease .95s forwards;
+ 
+        }
+ 
+ 
+        .hero-btn {
+ 
+            padding: 15px 28px;
+ 
+            border: 1px solid white;
+ 
+            color: white;
+ 
+            font-size: 9px;
+ 
+            letter-spacing: 2px;
+ 
+            text-transform: uppercase;
+ 
+            transition: all .4s ease;
+ 
+        }
+ 
+ 
+        .hero-btn:hover {
+ 
+            background: white;
+ 
+            color: black;
+ 
+            transform: translateY(-4px);
+ 
+        }
+ 
+ 
+        .hero-btn.gold {
+ 
+            background: var(--gold);
+ 
+            border-color: var(--gold);
+ 
+        }
+ 
+ 
+        .hero-btn.gold:hover {
+ 
+            background: white;
+ 
+            border-color: white;
+ 
+        }
+ 
+ 
+        /* HERO SOCIAL — horizontal row, bottom left, over the video */
+ 
+        .hero-social {
+ 
+            position: absolute;
+ 
+            left: 7%;
+ 
+            bottom: 50px;
+ 
+            z-index: 3;
+ 
+            display: flex;
+ 
+            flex-direction: column;
+ 
+            gap: 16px;
+ 
+            opacity: 0;
+ 
+            animation: fadeUp 1s ease 1.2s forwards;
+ 
+        }
+ 
+ 
+        .hero-social .social-line {
+ 
+            width: 40px;
+ 
+            height: 1px;
+ 
+            background: rgba(255,255,255,.6);
+ 
+        }
+ 
+ 
+        .hero-social .social-row {
+ 
+            display: flex;
+ 
+            flex-direction: row;
+ 
+            align-items: center;
+ 
+            gap: 22px;
+ 
+        }
+ 
+ 
+        .hero-social a {
+ 
+            color: white;
+ 
+            font-size: 15px;
+ 
+            opacity: .85;
+ 
+            transition: all .3s ease;
+ 
+        }
+ 
+ 
+        .hero-social a:hover {
+ 
+            color: var(--gold);
+ 
+            opacity: 1;
+ 
+            transform: translateY(-3px);
+ 
+        }
+ 
+ 
+        /* SCROLL INDICATOR */
+ 
+        .scroll-indicator {
+ 
+            position: absolute;
+ 
+            bottom: 30px;
+ 
+            right: 7%;
+ 
+            left: auto;
+ 
+            transform: none;
+ 
+            z-index: 3;
+ 
+            color: white;
+ 
+            text-align: center;
+ 
+        }
+ 
+ 
+        .scroll-indicator span {
+ 
+            display: block;
+ 
+            font-size: 8px;
+ 
+            letter-spacing: 3px;
+ 
+            margin-bottom: 10px;
+ 
+            text-transform: uppercase;
+ 
+        }
+ 
+ 
+        .scroll-line {
+ 
+            width: 1px;
+ 
+            height: 45px;
+ 
+            background: rgba(255,255,255,.7);
+ 
+            margin: auto;
+ 
+            animation: scrollLine 1.8s infinite;
+ 
+        }
+ 
+ 
+        @keyframes scrollLine {
+ 
+            0% {
+ 
+                transform: scaleY(0);
+ 
+                transform-origin: top;
+ 
+            }
+ 
+            50% {
+ 
+                transform: scaleY(1);
+ 
+                transform-origin: top;
+ 
+            }
+ 
+            100% {
+ 
+                transform: scaleY(0);
+ 
+                transform-origin: bottom;
+ 
+            }
+ 
+        }
+ 
+ 
+        /* =========================================================
+           INTRODUCTION SECTION
+        ========================================================== */
+ 
+        .intro {
+ 
+            padding: 150px 8%;
+ 
+            background: var(--cream);
+ 
+        }
+ 
+ 
+        .intro-container {
+ 
+            max-width: 1100px;
+ 
+            margin: auto;
+ 
+            text-align: center;
+ 
+        }
+ 
+ 
+        .intro h2 {
+ 
+            font-family: "Cormorant Garamond", serif;
+ 
+            font-size:
+ 
+                clamp(45px, 6vw, 80px);
+ 
+            font-weight: 500;
+ 
+            line-height: 1;
+ 
+            max-width: 900px;
+ 
+            margin: auto;
+ 
+        }
+ 
+ 
+        .intro h2 span {
+ 
+            color: var(--gold);
+ 
+        }
+ 
+ 
+        .intro p {
+ 
+            max-width: 650px;
+ 
+            margin: 35px auto 0;
+ 
+            color: var(--text);
+ 
+            font-size: 13px;
+ 
+            line-height: 2;
+ 
+            opacity: 0;
+ 
+            transform: translateY(20px);
+ 
+            transition: opacity 1s ease .3s, transform 1s ease .3s;
+ 
+        }
+ 
+        .reveal.active .intro p {
+ 
+            opacity: 1;
+            transform: translateY(0);
+ 
+        }
+ 
+ 
+        /* =========================================================
+           IMAGE STORY SECTION
+        ========================================================== */
+ 
+        .story {
+ 
+            padding: 0;
+ 
+            display: grid;
+ 
+            grid-template-columns: 1fr 1fr;
+ 
+            min-height: 750px;
+ 
+        }
+ 
+ 
+        .story-image {
+ 
+            position: relative;
+ 
+            overflow: hidden;
+ 
+        }
+ 
+ 
+        .story-image img {
+ 
+            height: 100%;
+ 
+            object-fit: cover;
+ 
+            transition: transform 1.2s ease;
+ 
+        }
+ 
+ 
+        .story-image:hover img {
+ 
+            transform: scale(1.05);
+ 
+        }
+ 
+ 
+        .story-content {
+ 
+            display: flex;
+ 
+            flex-direction: column;
+ 
+            justify-content: center;
+ 
+            padding: 100px 13%;
+ 
+            background: white;
+ 
+        }
+ 
+ 
+        .story-content h2 {
+ 
+            font-family: "Cormorant Garamond", serif;
+ 
+            font-size:
+ 
+                clamp(45px, 5vw, 75px);
+ 
+            font-weight: 500;
+ 
+            line-height: 1;
+ 
+            margin-bottom: 30px;
+ 
+        }
+ 
+ 
+        .story-content p {
+ 
+            font-size: 13px;
+ 
+            line-height: 2;
+ 
+            color: var(--text);
+ 
+            margin-bottom: 30px;
+ 
+        }
+ 
+ 
+        .text-link {
+ 
+            display: inline-flex;
+ 
+            align-items: center;
+ 
+            gap: 15px;
+ 
+            font-size: 10px;
+ 
+            letter-spacing: 2px;
+ 
+            text-transform: uppercase;
+ 
+            color: #111;
+ 
+            width: fit-content;
+ 
+        }
+ 
+ 
+        .text-link i {
+ 
+            color: var(--gold);
+ 
+            transition: transform .3s ease;
+ 
+        }
+ 
+ 
+        .text-link:hover i {
+ 
+            transform: translateX(7px);
+ 
+        }
+ 
+ 
+        /* =========================================================
+           MINISTRY SECTION  (now a fading photo slideshow background)
+        ========================================================== */
+ 
+        .ministry {
+ 
+            position: relative;
+ 
+            min-height: 850px;
+ 
+            display: flex;
+ 
+            align-items: center;
+ 
+            justify-content: center;
+ 
+            overflow: hidden;
+ 
+            color: white;
+ 
+        }
+ 
+ 
+        .ministry-background {
+ 
+            position: absolute;
+ 
+            inset: 0;
+ 
+            background-image:
+ 
+                linear-gradient(
+                    rgba(0,0,0,.5),
+                    rgba(0,0,0,.7)
+                ),
+ 
+                url("ruth3.jpg");
+ 
+            background-size: cover;
+ 
+            background-position: center;
+ 
+            transition: opacity 1s ease;
+ 
+            transform: scale(1.03);
+ 
+            animation: heroZoom 12s ease-in-out infinite alternate;
+ 
+        }
+ 
+ 
+        .ministry-overlay {
+ 
+            position: absolute;
+ 
+            inset: 0;
+ 
+            background:
+ 
+                linear-gradient(
+ 
+                    rgba(0,0,0,.35),
+ 
+                    rgba(0,0,0,.6)
+ 
+                );
+ 
+        }
+ 
+ 
+        .ministry-content {
+ 
+            position: relative;
+ 
+            z-index: 2;
+ 
+            max-width: 850px;
+ 
+            text-align: center;
+ 
+            padding: 40px 20px;
+ 
+        }
+ 
+ 
+        .ministry-content h2 {
+ 
+            font-family: "Cormorant Garamond", serif;
+ 
+            font-size:
+ 
+                clamp(55px, 8vw, 110px);
+ 
+            font-weight: 500;
+ 
+            line-height: .95;
+ 
+            margin: 25px 0;
+ 
+        }
+ 
+ 
+        .ministry-content p {
+ 
+            max-width: 600px;
+ 
+            margin: auto;
+ 
+            font-size: 13px;
+ 
+            line-height: 2;
+ 
+            opacity: .85;
+ 
+        }
+ 
+ 
+        .ministry-content a {
+ 
+            display: inline-block;
+ 
+            margin-top: 40px;
+ 
+            padding: 15px 30px;
+ 
+            border: 1px solid white;
+ 
+            font-size: 9px;
+ 
+            letter-spacing: 2px;
+ 
+            text-transform: uppercase;
+ 
+            transition: .4s;
+ 
+        }
+ 
+ 
+        .ministry-content a:hover {
+ 
+            background: white;
+ 
+            color: black;
+ 
+        }
+ 
+ 
+        /* =========================================================
+           GALLERY SECTION
+        ========================================================== */
+ 
+        .gallery-section {
+ 
+            padding: 130px 7%;
+ 
+            background: white;
+ 
+        }
+ 
+ 
+        .gallery-header {
+ 
+            max-width: 1300px;
+ 
+            margin: auto auto 70px;
+ 
+            display: flex;
+ 
+            align-items: end;
+ 
+            justify-content: space-between;
+ 
+            gap: 40px;
+ 
+        }
+ 
+ 
+        .gallery-header h2 {
+ 
+            font-family: "Cormorant Garamond", serif;
+ 
+            font-size:
+ 
+                clamp(45px, 5vw, 75px);
+ 
+            font-weight: 500;
+ 
+        }
+ 
+ 
+        .gallery-header p {
+ 
+            max-width: 400px;
+ 
+            color: #666;
+ 
+            font-size: 12px;
+ 
+            line-height: 1.8;
+ 
+        }
+ 
+ 
+        .gallery-grid {
+ 
+            max-width: 1400px;
+ 
+            margin: auto;
+ 
+            display: grid;
+ 
+            grid-template-columns:
+ 
+                repeat(4, 1fr);
+ 
+            gap: 15px;
+ 
+        }
+ 
+ 
+        .gallery-item {
+ 
+            position: relative;
+ 
+            overflow: hidden;
+ 
+            height: 450px;
+ 
+        }
+ 
+ 
+        .gallery-item:nth-child(even) {
+ 
+            margin-top: 80px;
+ 
+        }
+ 
+ 
+        .gallery-item img {
+ 
+            height: 100%;
+ 
+            object-fit: cover;
+ 
+            transition: transform .8s ease;
+ 
+        }
+ 
+ 
+        .gallery-item:hover img {
+ 
+            transform: scale(1.1);
+ 
+        }
+ 
+ 
+        .gallery-item::after {
+ 
+            content: "";
+ 
+            position: absolute;
+ 
+            inset: 0;
+ 
+            background:
+ 
+                linear-gradient(
+ 
+                    transparent,
+ 
+                    rgba(0,0,0,.5)
+ 
+                );
+ 
+            opacity: 0;
+ 
+            transition: .5s;
+ 
+        }
+ 
+ 
+        .gallery-item:hover::after {
+ 
+            opacity: 1;
+ 
+        }
+ 
+ 
+        /* =========================================================
+           EVENTS
+        ========================================================== */
+ 
+        .events {
+ 
+            padding: 140px 8%;
+ 
+            background: var(--black);
+ 
+            color: white;
+ 
+        }
+ 
+ 
+        .events-container {
+ 
+            max-width: 1350px;
+ 
+            margin: auto;
+ 
+        }
+ 
+ 
+        .events-heading {
+ 
+            text-align: center;
+ 
+            margin-bottom: 70px;
+ 
+        }
+ 
+ 
+        .events-heading h2 {
+ 
+            font-family: "Cormorant Garamond", serif;
+ 
+            font-size:
+ 
+                clamp(50px, 6vw, 85px);
+ 
+            font-weight: 500;
+ 
+        }
+ 
+ 
+        .events-grid {
+ 
+            display: grid;
+ 
+            grid-template-columns:
+ 
+                repeat(4, 1fr);
+ 
+            gap: 20px;
+ 
+        }
+ 
+ 
+        .event-card {
+ 
+            position: relative;
+ 
+            height: 450px;
+ 
+            overflow: hidden;
+ 
+        }
+ 
+ 
+        .event-card img {
+ 
+            height: 100%;
+ 
+            object-fit: cover;
+ 
+            transition: transform .8s ease;
+ 
+        }
+ 
+ 
+        .event-card:hover img {
+ 
+            transform: scale(1.08);
+ 
+        }
+ 
+ 
+        .event-overlay {
+ 
+            position: absolute;
+ 
+            inset: 0;
+ 
+            display: flex;
+ 
+            flex-direction: column;
+ 
+            justify-content: flex-end;
+ 
+            padding: 30px;
+ 
+            background:
+ 
+                linear-gradient(
+ 
+                    transparent 30%,
+ 
+                    rgba(0,0,0,.9)
+ 
+                );
+ 
+        }
+ 
+ 
+        .event-overlay h3 {
+ 
+            font-family: "Cormorant Garamond", serif;
+ 
+            font-size: 30px;
+ 
+            font-weight: 500;
+ 
+        }
+ 
+ 
+        .event-overlay p {
+ 
+            font-size: 9px;
+ 
+            letter-spacing: 2px;
+ 
+            margin-top: 10px;
+ 
+            text-transform: uppercase;
+ 
+            opacity: .7;
+ 
+        }
+ 
+ 
+        /* =========================================================
+           QUOTE SECTION
+        ========================================================== */
+ 
+        .quote-section {
+ 
+            padding: 150px 8%;
+ 
+            background: var(--gold);
+ 
+            text-align: center;
+ 
+            color: white;
+ 
+            position: relative;
+ 
+            overflow: hidden;
+ 
+        }
+ 
+ 
+        .quote-section i {
+ 
+            font-size: 30px;
+ 
+            margin-bottom: 30px;
+ 
+            opacity: .7;
+ 
+            display: inline-block;
+ 
+            animation: floatSlow 3.5s ease-in-out infinite;
+ 
+        }
+ 
+ 
+        .quote-section h2 {
+ 
+            font-family: "Cormorant Garamond", serif;
+ 
+            font-size:
+ 
+                clamp(45px, 6vw, 85px);
+ 
+            font-weight: 500;
+ 
+            line-height: 1.1;
+ 
+            max-width: 1000px;
+ 
+            margin: auto;
+ 
+        }
+ 
+ 
+        .quote-section p {
+ 
+            margin-top: 30px;
+ 
+            font-size: 10px;
+ 
+            letter-spacing: 3px;
+ 
+            text-transform: uppercase;
+ 
+        }
+ 
+ 
+        /* =========================================================
+           FOOTER
+        ========================================================== */
+ 
+        footer {
+ 
+            background: #060606;
+ 
+            color: white;
+ 
+            padding: 100px 8% 40px;
+ 
+        }
+ 
+ 
+        .footer-top {
+ 
+            max-width: 1400px;
+ 
+            margin: auto;
+ 
+            display: grid;
+ 
+            grid-template-columns:
+ 
+                1.4fr 1fr 1fr 1.3fr;
+ 
+            gap: 50px;
+ 
+            padding-bottom: 70px;
+ 
+            border-bottom:
+ 
+                1px solid rgba(255,255,255,.12);
+ 
+        }
+ 
+ 
+        .footer-brand h2 {
+ 
+            font-family: "Cormorant Garamond", serif;
+ 
+            font-size: 45px;
+ 
+            font-weight: 500;
+ 
+            letter-spacing: 2px;
+ 
+        }
+ 
+ 
+        .footer-brand p {
+ 
+            font-size: 11px;
+ 
+            color: #888;
+ 
+            line-height: 1.9;
+ 
+            max-width: 350px;
+ 
+            margin-top: 20px;
+ 
+        }
+ 
+ 
+        .footer-column h4 {
+ 
+            font-size: 10px;
+ 
+            letter-spacing: 3px;
+ 
+            text-transform: uppercase;
+ 
+            margin-bottom: 25px;
+ 
+            color: var(--gold);
+ 
+        }
+ 
+ 
+        .footer-column a {
+ 
+            display: flex;
+ 
+            align-items: center;
+ 
+            gap: 10px;
+ 
+            color: #999;
+ 
+            font-size: 11.5px;
+ 
+            margin-bottom: 15px;
+ 
+            transition: .3s;
+ 
+        }
+ 
+ 
+        .footer-column a i {
+ 
+            font-size: 8px;
+ 
+            color: var(--gold);
+ 
+        }
+ 
+ 
+        .footer-column a:hover {
+ 
+            color: var(--gold);
+ 
+            transform: translateX(4px);
+ 
+        }
+ 
+ 
+        /* LATEST VIDEOS — small thumbnail grid, no play-button overlay */
+ 
+        .footer-videos h4 {
+ 
+            font-size: 10px;
+ 
+            letter-spacing: 3px;
+ 
+            text-transform: uppercase;
+ 
+            margin-bottom: 25px;
+ 
+            color: var(--gold);
+ 
+        }
+ 
+ 
+        .footer-videos-grid {
+ 
+            display: grid;
+ 
+            grid-template-columns: repeat(3, 1fr);
+ 
+            gap: 10px;
+ 
+        }
+ 
+ 
+        .footer-videos-grid a {
+ 
+            display: block;
+ 
+            overflow: hidden;
+ 
+            aspect-ratio: 1 / 1;
+ 
+        }
+ 
+ 
+        .footer-videos-grid img {
+ 
+            width: 100%;
+ 
+            height: 100%;
+ 
+            object-fit: cover;
+ 
+            transition: transform .5s ease, filter .5s ease;
+ 
+            filter: grayscale(15%);
+ 
+        }
+ 
+ 
+        .footer-videos-grid a:hover img {
+ 
+            transform: scale(1.12);
+ 
+            filter: grayscale(0%);
+ 
+        }
+ 
+ 
+        .footer-bottom {
+ 
+            max-width: 1400px;
+ 
+            margin: 30px auto 0;
+ 
+            display: flex;
+ 
+            justify-content: space-between;
+ 
+            align-items: center;
+ 
+            font-size: 9px;
+ 
+            color: #666;
+ 
+            letter-spacing: 1px;
+ 
+        }
+ 
+ 
+        .footer-bottom .social-links {
+ 
+            display: flex;
+ 
+            gap: 15px;
+ 
+        }
+ 
+ 
+        .footer-bottom .social-links a {
+ 
+            width: 34px;
+ 
+            height: 34px;
+ 
+            border:
+ 
+                1px solid rgba(255,255,255,.25);
+ 
+            display: flex;
+ 
+            align-items: center;
+ 
+            justify-content: center;
+ 
+            color: white;
+ 
+            font-size: 12px;
+ 
+            transition: .3s;
+ 
+        }
+ 
+ 
+        .footer-bottom .social-links a:hover {
+ 
+            background: var(--gold);
+ 
+            border-color: var(--gold);
+ 
+            transform: translateY(-4px);
+ 
+        }
+ 
+ 
+        /* =========================================================
+           REVEAL ANIMATION
+        ========================================================== */
+ 
+        .reveal {
+ 
+            opacity: 0;
+ 
+            transform: translateY(60px);
+ 
+            transition:
+ 
+                opacity 1s ease,
+ 
+                transform 1s ease;
+ 
+        }
+ 
+ 
+        .reveal.active {
+ 
+            opacity: 1;
+ 
+            transform: translateY(0);
+ 
+        }
+ 
+ 
+        /* =========================================================
+           RESPONSIVE DESIGN
+        ========================================================== */
+ 
+        @media (max-width: 1000px) {
+ 
+            .nav-links {
+ 
+                gap: 18px;
+ 
+            }
+ 
+ 
+            .events-grid {
+ 
+                grid-template-columns:
+                    repeat(2, 1fr);
+ 
+            }
+ 
+ 
+            .gallery-grid {
+ 
+                grid-template-columns:
+                    repeat(2, 1fr);
+ 
+            }
+ 
+ 
+            .footer-top {
+ 
+                grid-template-columns:
+                    1fr 1fr;
+ 
+            }
+ 
+        }
+ 
+ 
+        @media (max-width: 768px) {
+ 
+            header {
+ 
+                padding: 20px 6%;
+ 
+            }
+ 
+ 
+            nav {
+ 
+                position: relative;
+ 
+            }
+ 
+ 
+            .menu-toggle {
+ 
+                display: block;
+ 
+            }
+ 
+ 
+            .nav-links {
+ 
+                position: absolute;
+ 
+                top: 70px;
+ 
+                left: 0;
+ 
+                width: 100%;
+ 
+                background: rgba(10,10,10,.98);
+ 
+                flex-direction: column;
+ 
+                padding: 30px;
+ 
+                gap: 25px;
+ 
+                display: none;
+ 
+            }
+ 
+ 
+            .nav-links.active {
+ 
+                display: flex;
+ 
+            }
+ 
+ 
+            .book-button {
+ 
+                display: none;
+ 
+            }
+ 
+ 
+            .logo strong {
+ 
+                font-size: 24px;
+ 
+            }
+ 
+ 
+            .hero {
+ 
+                min-height: 100svh;
+ 
+            }
+ 
+ 
+            .hero-content h1 {
+ 
+                font-size: 72px;
+ 
+            }
+ 
+ 
+            .hero-content small {
+ 
+                letter-spacing: 3px;
+ 
+                font-size: 8px;
+ 
+            }
+ 
+ 
+            .hero-social {
+ 
+                left: 6%;
+ 
+                bottom: 90px;
+ 
+            }
+ 
+ 
+            .scroll-indicator {
+ 
+                right: 6%;
+ 
+            }
+ 
+ 
+            .story {
+ 
+                grid-template-columns: 1fr;
+ 
+            }
+ 
+ 
+            .story-image {
+ 
+                height: 550px;
+ 
+            }
+ 
+ 
+            .story-content {
+ 
+                padding: 90px 10%;
+ 
+            }
+ 
+ 
+            .gallery-header {
+ 
+                flex-direction: column;
+ 
+                align-items: flex-start;
+ 
+            }
+ 
+ 
+            .gallery-item {
+ 
+                height: 400px;
+ 
+            }
+ 
+ 
+            .gallery-item:nth-child(even) {
+ 
+                margin-top: 0;
+ 
+            }
+ 
+ 
+            .events-grid {
+ 
+                grid-template-columns: 1fr;
+ 
+            }
+ 
+ 
+            .event-card {
+ 
+                height: 500px;
+ 
+            }
+ 
+ 
+            .footer-top {
+ 
+                grid-template-columns: 1fr;
+ 
+            }
+ 
+ 
+            .footer-bottom {
+ 
+                flex-direction: column;
+ 
+                gap: 20px;
+ 
+            }
+ 
+        }
+ 
+ 
+        @media (max-width: 500px) {
+ 
+            .intro {
+ 
+                padding: 100px 8%;
+ 
+            }
+ 
+ 
+            .gallery-section {
+ 
+                padding: 100px 6%;
+ 
+            }
+ 
+ 
+            .gallery-grid {
+ 
+                grid-template-columns: 1fr;
+ 
+            }
+ 
+ 
+            .events {
+ 
+                padding: 100px 6%;
+ 
+            }
+ 
+ 
+            .ministry {
+ 
+                min-height: 700px;
+ 
+            }
+ 
+        }
+ 
+
+        /* =========================================================
+           PROFESSIONAL RESPONSIVE REFINEMENT
+           Keeps the original content intact while fixing layout bugs
+        ========================================================== */
+        html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
+        body { min-width: 0; line-height: 1.6; }
+        img, video, iframe { max-width: 100%; }
+        section, footer, header { width: 100%; max-width: 100%; }
+        .hero { min-height: 100svh; min-height: 100vh; isolation: isolate; overflow: hidden; }
+        .hero-video { width: 100%; height: 100%; object-fit: cover; }
+        .hero-content { width: min(92%, 1100px); margin-inline: auto; padding-inline: clamp(1rem, 4vw, 4rem); }
+        .hero-content h1 { font-size: clamp(3.4rem, 10vw, 8.5rem); line-height: .85; }
+        .hero-content small { font-size: clamp(.65rem, 1.2vw, .85rem); max-width: 100%; }
+        .hero-actions { flex-wrap: wrap; justify-content: center; gap: .9rem; }
+        .hero-btn { min-height: 48px; white-space: nowrap; }
+        .hero-social { z-index: 5; }
+        .hero-social a, .social-links a { transition: transform .25s ease, color .25s ease, background .25s ease; }
+        .hero-social a:hover, .social-links a:hover { transform: translateY(-4px) scale(1.06); }
+
+        .intro-container, .story, .events-container { width: min(92%, 1280px); margin-inline: auto; }
+        .intro, .story, .ministry, .gallery-section, .events, .quote-section { overflow: hidden; }
+        .section-label, .hero-content small { word-break: normal; overflow-wrap: anywhere; }
+        .story-content, .intro-container, .ministry-content { min-width: 0; }
+        .story-image img, .gallery-item img, .event-card img { object-fit: cover; }
+        .gallery-grid, .events-grid, .footer-top, .footer-videos-grid { min-width: 0; }
+        .gallery-item, .event-card, .footer-videos-grid > * { min-width: 0; }
+        .event-card { border-radius: 14px; overflow: hidden; box-shadow: 0 18px 45px rgba(0,0,0,.14); }
+        .event-card:hover { transform: translateY(-8px); }
+        .gallery-item { border-radius: 12px; overflow: hidden; }
+        .gallery-item img { transition: transform .7s ease; }
+        .gallery-item:hover img { transform: scale(1.06); }
+        footer { overflow: hidden; }
+
+        /* Large tablets and small laptops */
+        @media (max-width: 1100px) {
+            .events-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .footer-top { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+
+        /* Tablets and phones: keep the entire page flowing vertically */
+        @media (max-width: 768px) {
+            header { padding: 16px 5%; }
+            nav { width: 100%; justify-content: space-between; }
+            .nav-links { z-index: 1001; left: 0; right: 0; width: 100%; max-height: calc(100svh - 70px); overflow-y: auto; }
+            .hero { min-height: 100svh; }
+            .hero-content { padding-top: 4rem; padding-bottom: 7rem; }
+            .hero-content h1 { font-size: clamp(3.2rem, 16vw, 5.8rem); }
+            .hero-actions { flex-direction: column; width: min(100%, 320px); margin-inline: auto; }
+            .hero-btn { width: 100%; text-align: center; }
+            .hero-social { left: 50%; right: auto; bottom: 24px; transform: translateX(-50%); width: max-content; }
+            .hero-social .social-row { flex-direction: row; }
+            .hero-social .social-line, .scroll-indicator { display: none; }
+            .story { grid-template-columns: 1fr; width: 100%; }
+            .story-image { height: clamp(320px, 70vw, 520px); }
+            .story-content { padding: clamp(3.5rem, 10vw, 5rem) 7%; }
+            .gallery-grid, .events-grid { grid-template-columns: 1fr; }
+            .gallery-item, .event-card { height: clamp(320px, 80vw, 500px); margin-top: 0 !important; }
+            .footer-top { grid-template-columns: 1fr; gap: 2.5rem; }
+            .footer-videos-grid { grid-template-columns: 1fr; }
+            .footer-bottom { text-align: center; }
+        }
+
+        /* Small phones */
+        @media (max-width: 480px) {
+            .logo strong { font-size: 1.25rem; }
+            .hero-content { width: 100%; padding-inline: 1.25rem; }
+            .hero-content h1 { font-size: clamp(3rem, 18vw, 4.8rem); }
+            .hero-content small { letter-spacing: .18em; }
+            .intro, .gallery-section, .events { padding-left: 6%; padding-right: 6%; }
+            .ministry-content, .quote-section { padding-left: 7%; padding-right: 7%; }
+            .footer-top, .footer-bottom { padding-left: 6%; padding-right: 6%; }
+        }
+
+    </style>
+ 
+</head>
+ 
+ 
+<body>
+ 
+ 
+<!-- =========================================================
+     HEADER
+========================================================== -->
+ 
+<header id="header">
+ 
+    <nav>
+ 
+        <a href="#home" class="logo">
+ 
+            <strong>RUTH ASONG</strong>
+ 
+            <span>OFFICIAL WEBSITE</span>
+ 
+        </a>
+ 
+ 
+        <ul class="nav-links" id="navLinks">
+ 
+            <li>
+                <a href="#home">Home</a>
+            </li>
+ 
+            <li>
+                <a href="music.html">Music</a>
+            </li>
+ 
+            <li>
+                <a href="biography.html">Biography</a>
+            </li>
+ 
+            <li>
+                <a href="#events">Events</a>
+            </li>
+ 
+            <li>
+                <a href="booking.html">Contact</a>
+            </li>
+ 
+        </ul>
+ 
+ 
+        <a href="booking.html"
+            class="book-button">
+ 
+            Book Ruth
+ 
+        </a>
+ 
+ 
+        <div class="menu-toggle"
+            id="menuToggle">
+ 
+            <i class="fa-solid fa-bars"></i>
+ 
+        </div>
+ 
+    </nav>
+ 
+</header>
+ 
+ 
+ 
+<!-- =========================================================
+     HERO — video background + horizontal social row
+========================================================== -->
+ 
+<section class="hero" id="home">
+ 
+    <video
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline>
+ 
+        <source
+            src="vid2.mp4"
+            type="video/mp4">
+ 
+    </video>
+ 
+ 
+    <div class="hero-content">
+ 
+        <small>
+            Gospel Music • Worship • Ministry
+        </small>
+ 
+ 
+        <h1>
+            <span class="word-rise">Ruth</span>
+            <span class="word-rise">Asong</span>
+        </h1>
+ 
+ 
+        <p>
+            A Life Dedicated To Worship And The Glory Of God
+        </p>
+ 
+ 
+        <div class="hero-actions">
+ 
+            <a href="music.html"
+                class="hero-btn gold">
+ 
+                Listen To Music
+ 
+            </a>
+ 
+ 
+            <a href="biography.html"
+                class="hero-btn">
+ 
+                Discover Her Story
+ 
+            </a>
+ 
+        </div>
+ 
+    </div>
+ 
+ 
+    <!-- HORIZONTAL SOCIAL ROW -->
+ 
+    <div class="hero-social">
+ 
+        <span class="social-line"></span>
+ 
+        <div class="social-row">
+ 
+            <a href="https://www.youtube.com/@RuthAsongOfficial"
+                target="_blank"
+                aria-label="YouTube">
+ 
+                <i class="fa-brands fa-youtube"></i>
+ 
+            </a>
+ 
+ 
+            <a href="https://www.instagram.com/ruthasongofficial/"
+                target="_blank"
+                aria-label="Instagram">
+ 
+                <i class="fa-brands fa-instagram"></i>
+ 
+            </a>
+ 
+ 
+            <a href="https://web.facebook.com/RuthAsongOfficial"
+                target="_blank"
+                aria-label="Facebook">
+ 
+                <i class="fa-brands fa-facebook-f"></i>
+ 
+            </a>
+ 
+ 
+            <a href="https://x.com"
+                target="_blank"
+                aria-label="X / Twitter">
+ 
+                <i class="fa-brands fa-x-twitter"></i>
+ 
+            </a>
+ 
+        </div>
+ 
+    </div>
+ 
+ 
+    <div class="scroll-indicator">
+ 
+        <span>Scroll</span>
+ 
+        <div class="scroll-line"></div>
+ 
+    </div>
+ 
+</section>
+ 
+ 
+ 
+<!-- =========================================================
+     INTRODUCTION
+========================================================== -->
+ 
+<section class="intro reveal">
+ 
+    <div class="intro-container">
+ 
+        <div class="section-label">
+ 
+            The Ministry
+ 
+        </div>
+ 
+ 
+        <h2 class="shimmer-text">
+ 
+            Music That Leads Hearts
+ 
+            <span>Closer To Jesus.</span>
+ 
+        </h2>
+ 
+ 
+        <p>
+ 
+            Ruth Asong is a worshipper and gospel music minister
+            whose passion is to use music as a vessel through which
+            lives are touched, hearts are encouraged, and people are
+            drawn into a deeper relationship with God.
+ 
+        </p>
+ 
+    </div>
+ 
+</section>
+ 
+ 
+ 
+<!-- =========================================================
+     STORY SECTION
+========================================================== -->
+ 
+<section class="story reveal">
+ 
+    <div class="story-image">
+ 
+        <img
+            src="ruth4.jpg"
+            alt="Ruth Asong">
+ 
+    </div>
+ 
+ 
+    <div class="story-content">
+ 
+        <div class="section-label">
+ 
+            About Ruth
+ 
+        </div>
+ 
+ 
+        <h2>
+ 
+            A Voice,
+            A Worshipper,
+            A Heart For Jesus.
+ 
+        </h2>
+ 
+ 
+        <p>
+ 
+            Everything Ruth Asong does is centred around one
+            purpose: making Jesus known. Through worship,
+            music and ministry, her desire is to create moments
+            where people encounter the presence of God.
+ 
+        </p>
+ 
+ 
+        <p>
+ 
+            Her journey is one of faith, obedience and a deep
+            commitment to serving God through the gift of music.
+ 
+        </p>
+ 
+ 
+        <a href="biography.html"
+            class="text-link">
+ 
+            Read Full Biography
+ 
+            <i class="fa-solid fa-arrow-right"></i>
+ 
+        </a>
+ 
+    </div>
+ 
+</section>
+ 
+ 
+ 
+<!-- =========================================================
+     MINISTRY — rotating photo background
+========================================================== -->
+ 
+<section class="ministry reveal">
+ 
+    <div class="ministry-background"
+        id="ministryBackground"></div>
+ 
+ 
+    <div class="ministry-overlay"></div>
+ 
+ 
+    <div class="ministry-content">
+ 
+        <div class="section-label"
+            style="color:#ffffff">
+ 
+            Ministry
+ 
+        </div>
+ 
+ 
+        <h2 class="shimmer-text">
+ 
+            Until The World
+            Encounters Jesus.
+ 
+        </h2>
+ 
+ 
+        <p>
+ 
+            Music is more than sound. It is a language of worship,
+            a vessel of healing and an expression of God's presence.
+            Through every song and every ministry moment, the goal
+            remains the same — Jesus revealed and lives transformed.
+ 
+        </p>
+ 
+ 
+        <a href="booking.html">
+ 
+            Connect With Ruth
+ 
+        </a>
+ 
+    </div>
+ 
+</section>
+ 
+ 
+ 
+<!-- =========================================================
+     GALLERY
+========================================================== -->
+ 
+<section class="gallery-section reveal">
+ 
+    <div class="gallery-header">
+ 
+        <div>
+ 
+            <div class="section-label">
+ 
+                The Journey
+ 
+            </div>
+ 
+ 
+            <h2>
+ 
+                Life In Worship
+ 
+            </h2>
+ 
+        </div>
+ 
+ 
+        <p>
+ 
+            Moments of worship, ministry, music and the journey
+            of sharing the love and presence of Jesus with people.
+ 
+        </p>
+ 
+    </div>
+ 
+ 
+    <div class="gallery-grid">
+ 
+        <div class="gallery-item">
+ 
+            <img
+                src="ruth23.jpg"
+                alt="Ruth Asong">
+ 
+        </div>
+ 
+ 
+        <div class="gallery-item">
+ 
+            <img
+                src="ruth5.jpg"
+                alt="Ruth Asong">
+ 
+        </div>
+ 
+ 
+        <div class="gallery-item">
+ 
+            <img
+                src="ruth16.jpg"
+                alt="Ruth Asong">
+ 
+        </div>
+ 
+ 
+        <div class="gallery-item">
+ 
+            <img
+                src="ruth25.jpg"
+                alt="Ruth Asong">
+ 
+        </div>
+ 
+    </div>
+ 
+</section>
+ 
+ 
+ 
+<!-- =========================================================
+     EVENTS
+========================================================== -->
+ 
+<section class="events"
+    id="events">
+ 
+    <div class="events-container">
+ 
+ 
+        <div class="events-heading reveal">
+ 
+            <div class="section-label">
+ 
+                Ministry Moments
+ 
+            </div>
+ 
+ 
+            <h2>
+ 
+                Events & Appearances
+ 
+            </h2>
+ 
+        </div>
+ 
+ 
+        <div class="events-grid">
+ 
+ 
+            <!-- EVENT 1 -->
+ 
+            <div class="event-card reveal">
+ 
+                <img
+                    src="ruth3.jpg"
+                    alt="Worship Rain">
+ 
+ 
+                <div class="event-overlay">
+ 
+                    <h3>
+                        Worship Rain
+                    </h3>
+ 
+ 
+                    <p>
+                        Music • Worship • Ministry
+                    </p>
+ 
+                </div>
+ 
+            </div>
+ 
+ 
+ 
+            <!-- EVENT 2 -->
+ 
+            <div class="event-card reveal">
+ 
+                <img
+                    src="ruth14.jpg"
+                    alt="Worship At His Feet">
+ 
+ 
+                <div class="event-overlay">
+ 
+                    <h3>
+                        Worship At His Feet
+                    </h3>
+ 
+ 
+                    <p>
+                        Experience An Atmosphere Of Worship
+                    </p>
+ 
+                </div>
+ 
+            </div>
+ 
+ 
+ 
+            <!-- EVENT 3 -->
+ 
+            <div class="event-card reveal">
+ 
+                <img
+                    src="ruth12.jpg"
+                    alt="Gratitude November">
+ 
+ 
+                <div class="event-overlay">
+ 
+                    <h3>
+                        Gratitude November
+                    </h3>
+ 
+ 
+                    <p>
+                        Praise • Thanksgiving • Worship
+                    </p>
+ 
+                </div>
+ 
+            </div>
+ 
+ 
+ 
+            <!-- EVENT 4 -->
+ 
+            <div class="event-card reveal">
+ 
+                <img
+                    src="ruth17.jpg"
+                    alt="Worshipper's Mandate">
+ 
+ 
+                <div class="event-overlay">
+ 
+                    <h3>
+                        Worshipper's Mandate
+                    </h3>
+ 
+ 
+                    <p>
+                        Connecting People Through Worship
+                    </p>
+ 
+                </div>
+ 
+            </div>
+ 
+ 
+        </div>
+ 
+    </div>
+ 
+</section>
+ 
+ 
+ 
+<!-- =========================================================
+     QUOTE
+========================================================== -->
+ 
+<section class="quote-section reveal">
+ 
+    <i class="fa-solid fa-quote-left"></i>
+ 
+ 
+    <h2>
+ 
+        "My Desire Is Not To Be Seen,
+        But That Through Every Song,
+        People May Encounter Jesus."
+ 
+    </h2>
+ 
+ 
+    <p>
+ 
+        Ruth Asong
+ 
+    </p>
+ 
+</section>
+ 
+ 
+ 
+<!-- =========================================================
+     FOOTER
+========================================================== -->
+ 
+<footer>
+ 
+    <div class="footer-top">
+ 
+ 
+        <!-- BRAND -->
+ 
+        <div class="footer-brand">
+ 
+            <h2>
+                Ruth Asong
+            </h2>
+ 
+ 
+            <p>
+ 
+                Gospel music minister and worshipper committed
+                to making Jesus known through music, ministry
+                and a life of worship.
+ 
+            </p>
+ 
+        </div>
+ 
+ 
+ 
+        <!-- NAVIGATION -->
+ 
+        <div class="footer-column">
+ 
+            <h4>
+                Quick Links
+            </h4>
+ 
+ 
+            <a href="#home">
+                <i class="fa-solid fa-play"></i> Home
+            </a>
+ 
+ 
+            <a href="music.html">
+                <i class="fa-solid fa-play"></i> Music
+            </a>
+ 
+ 
+            <a href="biography.html">
+                <i class="fa-solid fa-play"></i> Biography
+            </a>
+ 
+ 
+            <a href="#events">
+                <i class="fa-solid fa-play"></i> Events
+            </a>
+ 
+        </div>
+ 
+ 
+ 
+        <!-- CONTACT -->
+ 
+        <div class="footer-column">
+ 
+            <h4>
+                Information
+            </h4>
+ 
+ 
+            <a href="booking.html">
+                <i class="fa-solid fa-play"></i> Book Ruth
+            </a>
+ 
+ 
+            <a href="booking.html">
+                <i class="fa-solid fa-play"></i> Contact Us
+            </a>
+ 
+ 
+            <a href="mailto:ruthasongofficial@gmail.com">
+                <i class="fa-solid fa-play"></i> Email Us
+            </a>
+ 
+        </div>
+ 
+ 
+ 
+        <!-- LATEST VIDEOS -->
+ 
+        <div class="footer-videos">
+ 
+            <h4>
+                Latest Videos
+            </h4>
+ 
+ 
+            <div class="footer-videos-grid">
+ 
+                <a href="https://www.youtube.com/watch?v=sIAURALdUMM"
+                   target="_blank"
+                   class="youtube-cover">
+
+                    <img
+                        src="https://img.youtube.com/vi/sIAURALdUMM/hqdefault.jpg"
+                        alt="Ruth Asong Music Video">
+
+                    <div class="youtube-overlay">
+
+                        <div class="youtube-play">
+                            ▶
+                        </div>
+
+                    </div>
+
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=QXQJMwljVUk"
+                   target="_blank"
+                   class="youtube-cover">
+
+                    <img
+                        src="https://img.youtube.com/vi/QXQJMwljVUk/hqdefault.jpg"
+                        alt="Ruth Asong Music Video">
+
+                    <div class="youtube-overlay">
+
+                        <div class="youtube-play">
+                            ▶
+                        </div>
+
+                    </div>
+
+                </a>
+ 
+                <a href="https://www.youtube.com/watch?v=Zjr15juzvXQ"
+                   target="_blank"
+                   class="youtube-cover">
+
+                    <img
+                        src="https://img.youtube.com/vi/Zjr15juzvXQ/hqdefault.jpg"
+                        alt="Ruth Asong Music Video">
+
+                    <div class="youtube-overlay">
+
+                        <div class="youtube-play">
+                            ▶
+                        </div>
+
+                    </div>
+
+                </a>
+ 
+                <a href="https://www.youtube.com/watch?v=tX4nJ8TV-3U"
+                   target="_blank"
+                   class="youtube-cover">
+
+                    <img
+                        src="https://img.youtube.com/vi/tX4nJ8TV-3U/hqdefault.jpg"
+                        alt="Ruth Asong Music Video">
+
+                    <div class="youtube-overlay">
+
+                        <div class="youtube-play">
+                            ▶
+                        </div>
+
+                    </div>
+
+                </a>
+
+ 
+               <a href="https://www.youtube.com/watch?v=clDIyw3iMeY"
+                   target="_blank"
+                   class="youtube-cover">
+
+                    <img
+                        src="https://img.youtube.com/vi/clDIyw3iMeY/hqdefault.jpg"
+                        alt="Ruth Asong Music Video">
+
+                    <div class="youtube-overlay">
+
+                        <div class="youtube-play">
+                            ▶
+                        </div>
+
+                    </div>
+
+                </a>
+
+ 
+                <a href="https://www.youtube.com/watch?v=WlRo-gphgEk"
+                   target="_blank"
+                   class="youtube-cover">
+
+                    <img
+                        src="https://img.youtube.com/vi/WlRo-gphgEk/hqdefault.jpg"
+                        alt="Ruth Asong Music Video">
+
+                    <div class="youtube-overlay">
+
+                        <div class="youtube-play">
+                            ▶
+                        </div>
+
+                    </div>
+
+                </a>
+ 
+            </div>
+ 
+        </div>
+ 
+ 
+    </div>
+ 
+ 
+ 
+    <div class="footer-bottom">
+ 
+        <span>
+            © 2026 Ruth Asong. All Rights Reserved.
+        </span>
+ 
+ 
+        <div class="social-links">
+ 
+            <a href="https://www.youtube.com/@RuthAsongOfficial" target="_blank" aria-label="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+ 
+            <a href="https://www.instagram.com/ruthasongofficial/" target="_blank" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+ 
+            <a href="https://web.facebook.com/RuthAsongOfficial" target="_blank" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+ 
+            <a href="https://x.com" target="_blank" aria-label="X">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+ 
+        </div>
+ 
+    </div>
+ 
+</footer>
+ 
+ 
+ 
+<!-- =========================================================
+     JAVASCRIPT
+========================================================== -->
+ 
+<script>
+ 
+ 
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
+ 
+    const menuToggle =
+        document.getElementById("menuToggle");
+ 
+    const navLinks =
+        document.getElementById("navLinks");
+ 
+ 
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener("click", function () {
+            navLinks.classList.toggle("active");
+            menuToggle.classList.toggle("active");
+        });
+    }
+ 
+ 
+ 
+
+    /* CLOSE MOBILE MENU WHEN RETURNING TO DESKTOP */
+    window.addEventListener("resize", function () {
+        if (window.innerWidth > 768 && navLinks) {
+            navLinks.classList.remove("active");
+        }
+    });
+
+    /* CLOSE MOBILE MENU AFTER CLICK */
+ 
+    document.querySelectorAll(".nav-links a")
+        .forEach(function (link) {
+ 
+            link.addEventListener("click", function () {
+ 
+                navLinks.classList.remove("active");
+ 
+            });
+ 
+        });
+ 
+ 
+ 
+    /* =====================================================
+       HEADER SCROLL EFFECT
+    ===================================================== */
+ 
+    const header =
+        document.getElementById("header");
+ 
+ 
+    window.addEventListener("scroll", function () {
+ 
+        if (window.scrollY > 80) {
+ 
+            header.classList.add("scrolled");
+ 
+        }
+ 
+        else {
+ 
+            header.classList.remove("scrolled");
+ 
+        }
+ 
+    });
+ 
+ 
+ 
+    /* =====================================================
+       MINISTRY PHOTO SLIDESHOW
+       (moved here from the hero — hero now uses vid1.mp4)
+    ===================================================== */
+ 
+    const ministryBackground =
+        document.getElementById("ministryBackground");
+ 
+ 
+    const backgrounds = [
+ 
+        "ruth3.jpg",
+ 
+        "ruth22.jpg",
+ 
+        "ruth1.jpg",
+ 
+        "ruth2.jpg",
+ 
+        "ruth25.jpg",
+ 
+        "ruth18.jpg",
+ 
+        "ruth5.jpg",
+ 
+        "ruth7.jpg",
+ 
+        "ruth9.jpg",
+ 
+        "ruth21.jpg",
+ 
+        "ruth24.jpg",
+ 
+        "ruth13.jpg"
+ 
+    ];
+ 
+ 
+    let currentBackground = 0;
+ 
+ 
+    function changeMinistryBackground() {
+ 
+        currentBackground++;
+ 
+ 
+        if (
+            currentBackground >= backgrounds.length
+        ) {
+ 
+            currentBackground = 0;
+ 
+        }
+ 
+ 
+        ministryBackground.style.opacity = "0";
+ 
+ 
+        setTimeout(function () {
+ 
+            ministryBackground.style.backgroundImage =
+ 
+                "linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.7)), url('" +
+ 
+                backgrounds[currentBackground] +
+ 
+                "')";
+ 
+ 
+            ministryBackground.style.opacity = "1";
+ 
+        }, 600);
+ 
+    }
+ 
+ 
+    setInterval(
+        changeMinistryBackground,
+        5000
+    );
+ 
+ 
+ 
+    /* =====================================================
+       SCROLL REVEAL ANIMATION
+    ===================================================== */
+ 
+    const revealElements =
+        document.querySelectorAll(".reveal");
+ 
+ 
+    function revealOnScroll() {
+ 
+        const windowHeight =
+            window.innerHeight;
+ 
+ 
+        revealElements.forEach(function (element) {
+ 
+            const elementTop =
+                element.getBoundingClientRect().top;
+ 
+ 
+            if (
+                elementTop <
+                windowHeight - 100
+            ) {
+ 
+                element.classList.add("active");
+ 
+            }
+ 
+        });
+ 
+    }
+ 
+ 
+    window.addEventListener(
+        "scroll",
+        revealOnScroll
+    );
+ 
+ 
+    revealOnScroll();
+ 
+ 
+ 
+</script>
+ 
+ 
+</body>
+ 
+</html>
+ 
+
